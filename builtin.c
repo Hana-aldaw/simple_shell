@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+##include "shell.h"
+
+=======
 #include "shell.h"
 
 /**
@@ -97,3 +101,4 @@ int _myhelp(info_t *info)
 		_puts(*arg_array); /* temp att_unused workaround */
 	return (0);
 }
+>>>>>>> 4986d606c508b602fe497f2ae8af43b96dfb54ad
