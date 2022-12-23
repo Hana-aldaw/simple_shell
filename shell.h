@@ -1,5 +1,5 @@
-#ifndef SHELL_H
-#define SHELL_H
+#ifndef SHELL_H_
+#define SHELL_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,6 +29,8 @@
 
 #define HIST_FILE
 #define HIST_MAX	4096
+
+extern char **environ;
 
 /**
  * struct liststr - singly linked list
@@ -80,7 +82,8 @@ typedef struct passinfo
 	char **environ;
 	int env_changed;
 	int status;
-
+	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
+	int cmd_buf_type; /* CMD_type ||, &&, ; */
 	int readfd;
 	int histcount;
 } info_t;
