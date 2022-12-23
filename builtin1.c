@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * _myhistory - displays the history list
  * @info: Structure containing potential arguments
@@ -11,13 +10,12 @@ int _myhistory(info_t *info)
 	print_list(info->history);
 	return (0);
 }
-
 /**
  * unset_alias - sets alias to string
  * @info: parameter struct
  * @str: the string alias
  *
- * Return: 0
+ * Return: 0 on success, 1 on error
  */
 int unset_alias(info_t *info, char *str)
 {
@@ -34,7 +32,6 @@ int unset_alias(info_t *info, char *str)
 	*p = c;
 	return (ret);
 }
-
 /**
  * set_alias - sets alias to string
  * @info: parameter struct
@@ -55,7 +52,6 @@ int set_alias(info_t *info, char *str)
 	unset_alias(info, str);
 	return (add_node_end(&(info->alias), str, 0) == NULL);
 }
-
 /**
  * print_alias - prints an alias string
  * @node: the alias node
@@ -78,7 +74,6 @@ int print_alias(list_t *node)
 	}
 	return (1);
 }
-
 /**
  * _myalias - mimics the alias builtin
  * @info: Structure containing potential arguments

@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * _myexit - exits the shell
  * @info: Structure containing potential arguments. Used to maintain
@@ -15,7 +14,6 @@ int _myexit(info_t *info)
 	if (info->argv[1])
 	{
 		exitcheck = _erratoi(info->argv[1]);
-
 		if (exitcheck == -1)
 		{
 			info->status = 2;
@@ -62,8 +60,7 @@ int _mycd(info_t *info)
 			return (1);
 		}
 		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
-		chdir_ret = /* TODO: what shoulthis be? */
-			chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
+		chdir_ret = chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
 	}
 	else
 		chdir_ret = chdir(info->argv[1]);
